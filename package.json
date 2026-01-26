@@ -4,7 +4,9 @@
   "description": "Music bot for Discord Server",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -19,8 +21,14 @@
   },
   "homepage": "https://github.com/nmlazaro/Jarvis#readme",
   "dependencies": {
-    "discord.js": "^13.17.1",
-    "dotenv": "^17.2.3"
+    "@discord-player/extractor": "^7.1.0",
+    "discord-player": "^7.1.0",
+    "discord-player-youtubei": "^1.5.0",
+    "discord.js": "^14.25.1",
+    "dotenv": "^17.2.3",
+    "ffmpeg-static": "^5.3.0",
+    "libsodium-wrappers": "^0.8.2",
+    "opusscript": "^0.1.1"
   },
   "devDependencies": {
     "@types/node": "^25.0.10",
