@@ -8,7 +8,7 @@ import { MusicModule } from './music/music.module';
   imports: [
     ConfigModule.forRoot({ isGlobal: true, validate }),
     DiscordModule,
-    MusicModule
+    MusicModule,
   ],
 })
 export class AppModule {}

@@ -13,7 +13,13 @@ describe('PlayerService', () => {
         PlayerService,
         {
           provide: DiscordClientService,
-          useValue: { client: { on: jest.fn(), once: jest.fn(), incrementMaxListeners: jest.fn() } },
+          useValue: {
+            client: {
+              on: jest.fn(),
+              once: jest.fn(),
+              incrementMaxListeners: jest.fn(),
+            },
+          },
         },
       ],
     }).compile();
@@ -30,17 +36,16 @@ describe('PlayerService', () => {
   });
 
   it('Play pasa el metadata a nodeOptions', async () => {
-    const result = {track: {title: 'any song'}};
+    const result = { track: { title: 'any song' } };
     service['player'].play = jest.fn().mockResolvedValue(result);
 
-    const channel = {id: 'channelA'} as any;
-    const metadata = {channel: 'abc'}
+    const channel = { id: 'channelA' } as any;
+    const metadata = { channel: 'abc' };
 
     await service.play(channel, 'consulta', metadata);
 
     expect(service['player'].play).toHaveBeenCalledWith(channel, 'consulta', {
-        nodeOptions: {metadata}
+      nodeOptions: { metadata },
     });
-
   });
 });

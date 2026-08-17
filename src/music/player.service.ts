@@ -1,11 +1,10 @@
 import { Injectable, Logger, OnModuleInit } from '@nestjs/common';
 import { VoiceBasedChannel } from 'discord.js';
-import { GuildQueue, Player, Track } from 'discord-player'
+import { GuildQueue, Player, Track } from 'discord-player';
 import { EmbedBuilder } from 'discord.js';
 import { DefaultExtractors } from '@discord-player/extractor';
 import { YoutubeiExtractor } from 'discord-player-youtubei';
 import { DiscordClientService } from '../discord/discord-client.service';
-
 
 @Injectable()
 export class PlayerService implements OnModuleInit {

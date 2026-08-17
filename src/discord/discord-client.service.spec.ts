@@ -9,7 +9,10 @@ describe('DiscordClientService', () => {
     const moduleRef = await Test.createTestingModule({
       providers: [
         DiscordClientService,
-        { provide: ConfigService, useValue: { getOrThrow: () => 'token-falso' } },
+        {
+          provide: ConfigService,
+          useValue: { getOrThrow: () => 'token-falso' },
+        },
       ],
     }).compile();
 
@@ -17,23 +20,25 @@ describe('DiscordClientService', () => {
   });
 
   it('Error al conecta el constructor', () => {
-    expect(service.client.isReady()).toBe(false)
+    expect(service.client.isReady()).toBe(false);
   });
 
   it('Login en onApplicationBootstrap con el token de config', async () => {
     // Arrange
-    const login = jest.spyOn(service.client, 'login').mockResolvedValue('token-falso')
-    
+    const login = jest
+      .spyOn(service.client, 'login')
+      .mockResolvedValue('token-falso');
+
     //Act
     await service.onApplicationBootstrap();
 
     //Assert
-    expect(login).toHaveBeenCalledWith('token-falso')
+    expect(login).toHaveBeenCalledWith('token-falso');
   });
 
   it('destruye el cliente en onModuleDestroy', async () => {
-    const destroy = jest.spyOn(service.client, 'destroy').mockResolvedValue()
-    
+    const destroy = jest.spyOn(service.client, 'destroy').mockResolvedValue();
+
     await service.onModuleDestroy();
 
     expect(destroy).toHaveBeenCalledWith();
