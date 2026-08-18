@@ -1,5 +1,6 @@
 {
-    "material-icon-theme.activeIconPack": "nest",
-    "js/ts.tsdk.path": "node_modules\\typescript\\lib",
-    "editor.formatOnSave": true
+  "material-icon-theme.activeIconPack": "nest",
+  "js/ts.tsdk.path": "node_modules\\typescript\\lib",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
