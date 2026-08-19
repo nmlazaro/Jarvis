@@ -5,7 +5,7 @@ import { PlayCommand } from './commands/play.command';
 import { SkipCommand } from './commands/skip.command';
 import { StopCommand } from './commands/stop.command';
 import { Command } from '../bot/interfaces/command.interface';
-import { MUSIC_COMMANDS } from './constants';
+import { MUSIC_COMMANDS } from './cmds-const';
 
 @Module({
   imports: [DiscordModule],

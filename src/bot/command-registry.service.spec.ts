@@ -1,5 +1,5 @@
 import { Test } from '@nestjs/testing';
-import { MUSIC_COMMANDS } from '../music/constants';
+import { MUSIC_COMMANDS } from '../music/cmds-const';
 import { Command } from './interfaces/command.interface';
 import { CommandRegistryService } from './command-registry.service';
 

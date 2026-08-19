@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { MUSIC_COMMANDS } from '../music/constants';
+import { MUSIC_COMMANDS } from '../music/cmds-const';
 import { Command } from './interfaces/command.interface';
 
 @Injectable()

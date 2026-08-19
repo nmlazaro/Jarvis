@@ -62,7 +62,7 @@ export class PlayerService implements OnModuleInit {
 
   async onModuleInit(): Promise<void> {
     await this.player.extractors.register(YoutubeiExtractor, {
-      streamOptions: { useClient: 'WEB' },
+      streamOptions: { useClient: 'IOS' },
     });
 
     await this.player.extractors.loadMulti(DefaultExtractors);
